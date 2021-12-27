@@ -17,7 +17,7 @@ program_not_exists() {
   return 0
 }
 
-if program_not_exists git; then
+if program_not_exists 'git'; then
   yum install git -y
 fi
 
