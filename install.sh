@@ -1,7 +1,6 @@
 defaultInstallNodeVersion="14.3"
 
-installNvm() {
-
+useNvmInstallNode() {
   nvm install ${defaultInstallNodeVersion}
   nvn use ${defaultInstallNodeVersion}
 }
@@ -15,4 +14,5 @@ if [[ $(uname) == 'Linux' ]]; then
   git clone git://github.com/cnpm/nvm.git ~/.nvm && cd ~/.nvm && git checkout $(git describe --abbrev=0 --tags)
   echo ". ~/.nvm/nvm.sh" >>/etc/profile
   source /etc/profile
+  useNvmInstallNode
 fi
