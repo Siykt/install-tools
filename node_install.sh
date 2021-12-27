@@ -11,9 +11,11 @@ program_not_exists() {
   command -v $1 >/dev/null 2>&1 || { local ret='1'; }
   # fail on non-zero return value
   if [ "$ret" -ne 0 ]; then
+    echo 1
     return 1
   fi
 
+  echo 0
   return 0
 }
 
